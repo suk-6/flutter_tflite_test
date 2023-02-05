@@ -47,10 +47,15 @@ android {
         applicationId "com.example.flutter_tflite_test"
         // You can update the following values to match your application needs.
         // For more information, see: https://docs.flutter.dev/deployment/android#reviewing-the-gradle-build-configuration.
-        minSdkVersion flutter.minSdkVersion
+        minSdkVersion 19
         targetSdkVersion flutter.targetSdkVersion
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
+    }
+    
+    aaptOptions {
+        noCompress 'tflite'
+        noCompress 'lite'
     }
 
     buildTypes {
@@ -69,3 +74,4 @@ flutter {
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
+
